@@ -67,17 +67,17 @@ for row in range(0,payments_df.shape[0]):
 
 group_owe = owes_df.groupby(['Situation'], as_index = False)['Amount'].sum()
 lookup = group_owe.copy()
-group_owe['Alternate'] = group_owe.Situation.str.split(' owes ').str[1] +" owes " + group_owe.Situation.str.split(' owes ').str[0]
+group_owe['Inverse'] = group_owe.Situation.str.split(' owes ').str[1] +" owes " + group_owe.Situation.str.split(' owes ').str[0]
 mapLookup = dict(lookup[['Situation', 'Amount']].values)
-group_owe['Alternate Amount'] = group_owe['Alternate'].map(mapLookup)
-group_owe['Alternate Amount'] = group_owe['Alternate Amount'].replace(np.nan, 0)
-group_owe['Final Amount']=group_owe['Amount'] -group_owe['Alternate Amount']
+group_owe['Inverse Amount'] = group_owe['Inverse'].map(mapLookup)
+group_owe['Inverse Amount'] = group_owe['Inverse Amount'].replace(np.nan, 0)
+group_owe['Final Amount']=group_owe['Amount'] -group_owe['Inverse Amount']
 group_owe = group_owe[group_owe['Final Amount'] > 0]
 group_owe['Amount']=group_owe['Amount'].round(2)
 group_owe['Final Amount']=group_owe['Final Amount'].round(2)
 
 final_owe = group_owe.copy()
-final_owe = final_owe.drop(['Amount', 'Alternate', 'Alternate Amount'], axis=1)
+final_owe = final_owe.drop(['Amount', 'Inverse', 'Inverse Amount'], axis=1)
 
 page_bg_img = """
 <style>
