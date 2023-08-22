@@ -127,3 +127,4 @@ st.download_button(
     file_name='expenses.csv',
     mime='text/csv',
 )
+st.dataframe(expenses_df)
