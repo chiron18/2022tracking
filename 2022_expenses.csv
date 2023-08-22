@@ -1,6 +1,6 @@
 Item,Paid,by,Greg,Ian,Peter,Jerry,Note
 Hotel in Quesnel ($248.50 for both rooms) - Group split,248.5,Greg,TRUE,TRUE,TRUE,TRUE,hotel
-Carmel Inn ($97.44 for room) - split Greg/Ian,48.72,Greg,TRUE,TRUE,FALSE,FALSE,
+Carmel Inn ($97.44 for room) - split Greg/Ian,97.44,Greg,TRUE,TRUE,FALSE,FALSE,
 Carmel Inn ($97.44 for room) - Ian paid for room for Peter/Jerry,97.44,Ian,TRUE,TRUE,TRUE,TRUE,
 133L for Chilliwack to camp + 140L to get back (split between Greg/Jerry/Peter),518.7,Greg,TRUE,FALSE,TRUE,TRUE,
 "bagels + Costco food e.g. butter, cheese, hashbrowns  - Group split ",102.38,Greg,TRUE,TRUE,TRUE,TRUE,
@@ -14,7 +14,7 @@ IMR 4198 Powder - for 45-70,76.275,Greg,FALSE,TRUE,FALSE,FALSE,
 IMR 4350 Powder (private sale - cant find in stores) - for 7mm REM Mag,100,Greg,FALSE,TRUE,FALSE,FALSE,
 45-70 brass,200,Greg,FALSE,TRUE,FALSE,FALSE,
 7mm REM Mag bullets - 2 bags,61.02,Greg,FALSE,TRUE,FALSE,FALSE,
-303 british bullets - 3 bags,101.7,Greg,FALSE,TRUE,FALSE,FALSE,
+303 british bullets - 3 bags,101.7,Greg,FALSE,FALSE,TRUE,FALSE,
 Supercharger charges for Tesla trip - split Greg/Peter/Jerry,52.62,Greg,TRUE,FALSE,TRUE,TRUE,
 Moose meat expenses - group split,1264,Ian,TRUE,TRUE,TRUE,TRUE,
 "Costco oil, gas for generator, & propane",160,Ian,TRUE,TRUE,TRUE,TRUE,
