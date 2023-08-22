@@ -83,7 +83,8 @@ final_owe = final_owe.drop(['Amount', 'Inverse', 'Inverse Amount'], axis=1)
 page_bg_img = """
 <style>
 [data-testid="block-container"]{
-background-image: url(https://gunsmagazine.com/wp-content/uploads/2022/07/G1022-Marlin-1895_Open-Action-7158_HR.jpg);
+#background-image: url(https://gunsmagazine.com/wp-content/uploads/2022/07/G1022-Marlin-1895_Open-Action-7158_HR.jpg);
+background-image: url(https://photos.google.com/photo/AF1QipPm4EuIaf9a7f8JRNlddngTCzqmrp5vrpTXbsbL);
 background-size: cover;
 background-position: right left;
 background-attachment: fixed;
