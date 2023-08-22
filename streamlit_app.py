@@ -114,11 +114,13 @@ st.write("Final Tally")
 st.dataframe(final_owe, hide_index=True)
 
 
-st.write("working datafram")
+st.write("working dataframes")
 st.write(expenses_df)
+st.write(group_owe)
 
 
 csv_expenses = convert_df(expenses_df)
+csv_results = convert_df(owes_df)
 csv_results = convert_df(final_owe)
 
 st.download_button(
@@ -127,4 +129,3 @@ st.download_button(
     file_name='expenses.csv',
     mime='text/csv',
 )
-st.dataframe(expenses_df)
