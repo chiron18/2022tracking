@@ -115,7 +115,9 @@ st.dataframe(final_owe, hide_index=True)
 
 
 st.write("working dataframes")
-st.write(expenses_df)
+
 st.write(owes_df)
 st.write(group_owe)
+st.write(final_owe)
+st.write(expenses_df)
 
