@@ -1,7 +1,7 @@
 Item,Paid,by,Greg,Ian,Peter,Jerry,Note
 Hotel in Quesnel ($248.50 for both rooms) - Group split,248.5,Greg,TRUE,TRUE,TRUE,TRUE,hotel
 Carmel Inn ($97.44 for room) - split Greg/Ian,97.44,Greg,TRUE,TRUE,FALSE,FALSE,
-Carmel Inn ($97.44 for room) - Ian paid for room for Peter/Jerry,97.44,Ian,TRUE,TRUE,TRUE,TRUE,
+Carmel Inn ($97.44 for room) - Ian paid for room for Peter/Jerry,97.44,Ian,FALSE,FALSE,TRUE,TRUE,
 133L for Chilliwack to camp + 140L to get back (split between Greg/Jerry/Peter),518.7,Greg,TRUE,FALSE,TRUE,TRUE,
 "bagels + Costco food e.g. butter, cheese, hashbrowns  - Group split ",102.38,Greg,TRUE,TRUE,TRUE,TRUE,
 gas ($231) - split between Greg/Jerry/Peter,231,Jerry,TRUE,FALSE,TRUE,TRUE,
