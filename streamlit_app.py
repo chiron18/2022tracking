@@ -74,6 +74,7 @@ group_owe['Inverse Amount'] = group_owe['Inverse Amount'].replace(np.nan, 0)
 group_owe['Final Amount']=group_owe['Amount'] -group_owe['Inverse Amount']
 group_owe = group_owe[group_owe['Final Amount'] > 0]
 group_owe['Amount']=group_owe['Amount'].round(2)
+group_owe['Inverse Amount']=group_owe['Inverse Amount'].round(2)
 group_owe['Final Amount']=group_owe['Final Amount'].round(2)
 
 final_owe = group_owe.copy()
