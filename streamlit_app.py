@@ -113,11 +113,12 @@ if st.button('Save Changes (manually refresh page to update final tally)'):
 st.write("Final Tally")
 st.dataframe(final_owe, hide_index=True)
 
-
+st.write("")
+st.write("")
+st.write("")
 st.write("working dataframes")
 
 st.write(owes_df)
 st.write(group_owe)
-st.write(final_owe)
 st.write(expenses_df)
 
