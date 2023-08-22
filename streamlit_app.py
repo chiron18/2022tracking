@@ -1,6 +1,14 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+import io
+
+
+
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
 
 st.set_page_config(layout="wide")
 
@@ -34,7 +42,7 @@ expenses_df['amount']=expenses_df['amount'].astype(float)
 expenses_df['amount']=expenses_df['amount'].round(2)
 
 owes_df = pd.DataFrame(columns=['Situation','Amount', 'Item']) # create empty dataframe
-#st.write(expenses_df)
+
 for row in range(0,expenses_df.shape[0]):
     for people in range(3,7):
         item = expenses_df.iat[row,0]
@@ -104,3 +112,18 @@ if st.button('Save Changes (manually refresh page to update final tally)'):
 
 st.write("Final Tally")
 st.dataframe(final_owe, hide_index=True)
+
+
+st.write("working datafram")
+st.write(expenses_df)
+
+
+csv_expenses = convert_df(expenses_df)
+csv_results = convert_df(final_owe)
+
+st.download_button(
+    label="Download expenses as CSV",
+    data=csv_expenses,
+    file_name='expenses.csv',
+    mime='text/csv',
+)
