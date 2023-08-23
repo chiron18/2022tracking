@@ -1,8 +1,8 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import io
-
+import openpyxl
+import datetime  # Import the datetime module
 
 
 def convert_df(df):
@@ -36,10 +36,10 @@ payments_df['Amount']=payments_df['Amount'].astype(float)
 payments_df['Amount']=payments_df['Amount'].round(2)
 
 expenses_df = input_df.copy()
-expenses_df['count'] = expenses_df[['Greg', 'Ian', 'Jerry','Peter']].sum(axis=1)
-expenses_df['amount'] = expenses_df['Paid']/expenses_df['count'] 
-expenses_df['amount']=expenses_df['amount'].astype(float)
-expenses_df['amount']=expenses_df['amount'].round(2)
+expenses_df['Split_count'] = expenses_df[['Greg', 'Ian', 'Jerry','Peter']].sum(axis=1)
+expenses_df['Amount_per_split'] = expenses_df['Paid']/expenses_df['Split_count'] 
+expenses_df['Amount_per_split']=expenses_df['Amount_per_split'].astype(float)
+
 
 owes_df = pd.DataFrame(columns=['Situation','Amount', 'Item']) # create empty dataframe
 
@@ -134,7 +134,7 @@ if st.button('Generate Excel File (in memory) - this is a two button process'):
     st.download_button(
         label='Click here to download the generated Excel file',
         data=open('tempFile.xlsx', 'rb'),
-        file_name=f'2023_Anzac_Expenses_{datetime.datetime.now():%Y-%m-%d_%H-%M-%S}.xlsx',
+        file_name=f'2022_Anzac_Expenses_{datetime.datetime.now():%Y-%m-%d_%H-%M-%S}.xlsx',
         mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     )
 
