@@ -115,6 +115,30 @@ if st.button('Save Changes (manually refresh page to update final tally)'):
 st.write("Final Tally")
 st.dataframe(final_owe, hide_index=True)
 
+# Create a download button
+if st.button('Generate Excel File (in memory) - this is a two button process'):
+    # Create an Excel writer object
+    excel_writer = pd.ExcelWriter('tempFile.xlsx', engine='openpyxl')
+    
+    # Write each DataFrame to a separate sheet
+    expenses_df.to_excel(excel_writer, sheet_name='Expenses', index=False)
+    payments_df.to_excel(excel_writer, sheet_name='Payments', index=False)
+    final_owe.to_excel(excel_writer, sheet_name='Final_Tally', index=False)
+    owes_df.to_excel(excel_writer, sheet_name='Situations', index=False)
+    group_owe.to_excel(excel_writer, sheet_name='Situation_Summary', index=False)
+    
+    # Save the Excel file
+    excel_writer.close()
+    
+    # Provide a link to download the Excel file
+    st.download_button(
+        label='Click here to download the generated Excel file',
+        data=open('tempFile.xlsx', 'rb'),
+        file_name=f'2023_Anzac_Expenses_{datetime.datetime.now():%Y-%m-%d_%H-%M-%S}.xlsx',
+        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    )
+
+
 st.write("")
 st.write("")
 st.write("")
