@@ -1,4 +1,5 @@
 From,To,Amount,Note
 Ian,Greg,20,"e-transfer Oct 23, 2022"
 Peter,Greg,200,"e-transfer Dec 04, 2022"
-Jerry,Greg,226.44,cash - aug 23
+Jerry,Greg,444,cash - aug 23
+Greg,Jerry,217.46,forwarded to 2023 expenses
